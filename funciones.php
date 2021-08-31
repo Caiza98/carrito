@@ -3,7 +3,7 @@ function conexion(){
    $servidor="localhost";
    $usuario="root";
    $clave="";
-   $base="21215041_carrito";
+   $base="cart";
    $conectar=mysqli_connect($servidor, $usuario, $clave, $base) or die("ERROR DE CONEXION");
    return $conectar;
 
@@ -11,7 +11,7 @@ function conexion(){
 
 function ingresar($usu,$clave){
 	$conectar=conexion();
-	$query="select * from clientes where cli_cedula='$usu' and cli_clave='$clave' ";
+	$query="select * from clientes where cliCedula='$usu' and cliClave='$clave' ";
 	$enviar=mysqli_query($conectar,$query);
 	$ver=mysqli_num_rows($enviar);
 	return $ver;

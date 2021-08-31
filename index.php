@@ -32,8 +32,15 @@
 	<title>Formulario</title>
 </head>
 <body>
+		<div class="container p-5 img-fluid  text-info">
+			<div class="row ">
+			<div class="col text-center">
+				<img src="imagenes/fondo2.jpg" width="600" class="rounded float-start" height="650">
+				
+			</div>
 
-	<form method="post"  >
+				<div class="col border border-info">
+					<form method="post"  >
 		<fieldset>
 			<div class="form-group">
 			<p class="text-success"></p>
@@ -45,7 +52,12 @@
 			<input type="submit" class="btn btn-outline-success" name="enviar">
 			</div>
 		</fieldset>
-	</form>
 
+					</form>					
+				</div>
+			</div>
+			</div>
+		</div>
+	
 </body>
 </html>
