@@ -1,0 +1,20 @@
+#contenedor1{
+		float: left;
+		background-color: skyblue;
+		width: 400px;
+		height: 450px;
+	}
+	#contenedor2{
+		float: left;
+background-color: green;
+		width: 800px;
+		height: 450px;
+	}
+	#slider{
+	position: relative;
+	margin-left: 20px;
+	height: 120px;
+	width: 256px;
+	border-top: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+}

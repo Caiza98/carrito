@@ -21,11 +21,12 @@ function ingresar($usu,$clave){
 
 function registro($a, $b, $c, $d, $e){
 	$conectar=conexion();
-	$query="insert into clientes value(0, $a, $b, $c, $d, $e)";
-	$enviar = mysql_query($conectar,$enviar);
+	$query="INSERT INTO clientes values (0,'$a','$b','$c','$d','$e')";
+	$enviar = mysqli_query($conectar,$query);
 	return $enviar;
 
 }
+
 
 ?>
 

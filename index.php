@@ -1,37 +1,13 @@
-<?php
- include ("funciones.php");
- session_start();
- $conect=conexion();
-
- if (isset($_POST['enviar'])) {
- 	$usuario=$_POST['usuario1'];
- 	$clave=$_POST['clave1'];
- 	$validar= ingresar($usuario,$clave);
- 	if ($validar>0) {
- 		$_SESSION['usuario']=$usuario;
- 		$query="select * from clientes where cli_cedula= '$usuario' and cli_clave = '$clave' ";
- 		$enviarC=mysqli_query($conect,$query);
- 		$ver = mysqli_fetch_array($enciarC);
- 		$_SESSION['id']=$ver['cli_nombre'];
- 		$_SESSION['nombre']=$ver['cli_nombre'];
- 		header('location:pagina.php');
-
- 	}else{
- 		echo '<scrip> alert ("ERROR"); </scrip>';
- 	}
- }
-
-
-?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script type="" src="ingresar.php"></script>
 	
 	<title>Formulario</title>
 </head>
-<body>
+<body class="bg-dark">
 		<div class="container p-5 img-fluid  text-info">
 			<div class="row ">
 			<div class="col text-center">
@@ -40,16 +16,26 @@
 			</div>
 
 				<div class="col border border-info">
-					<form method="post"  >
+					<form method="post" action="ingresar.php"  >
 		<fieldset>
-			<div class="form-group">
+			<div class="form-group ">
 			<p class="text-success"></p>
-			<legend class="text-success">Formulario Sessiones</legend>
-			<label for="formGroupExampleInput" class="text-danger">Ingrese su cedula</label>
-			<input type="text" class="form-control"  placeholder="Ingrese su cedula" name="usuario1"><br><br>
-			<label for="inputPassword" class="col-sm-2 col-form-label">Ingrese la contraseña</label>
-			<input type="password"  class="form-control" placeholder="Ingrese su contraseña" name="clave1"><br><br>
-			<input type="submit" class="btn btn-outline-success" name="enviar">
+			<div class="display-3 text-center "><legend class="text-success">Session Form</legend></div>
+			<div class="form-group">
+				<label for="formGroupExampleInput" class="form-control-feedback">Ingrese su cedula</label>
+				<input type="text" class="form-control"  placeholder="Ingrese su cedula" name="usuario1">
+			</div>
+			<div>
+				<label for="inputPassword" class="form-control-feedback ">Ingrese la contraseña</label>
+			<input type="password"  class="form-control" placeholder="Ingrese su contraseña" name="clave1">
+			
+			</div>
+				<div class="form-group my-4">
+					<input type="submit" class="btn btn-outline-success btn-block" name="enviar">
+				</div>
+			</div>
+			<div>
+				<span>You do not have an account?<a href="registrar.php">   Here</a></span>
 			</div>
 		</fieldset>
 
