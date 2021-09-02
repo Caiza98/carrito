@@ -10,6 +10,7 @@ $(function() {
 			document.getElementById("caja").src="productos/cocaCola.png";
 			document.getElementById("nombre").value="Coca Cola";
 			document.getElementById("valor").value="1 dolar";
+			document.getElementById("file").value="Imagen";
 			}
 			if (img.id=="2") {
 			document.getElementById("caja").src="productos/fanta.png";

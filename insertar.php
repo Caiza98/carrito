@@ -12,9 +12,9 @@
     
     $validar= registro($cedula,$name,$direccion,$telefono,$password);
      if($validar>0){
-         echo 'Bien ';
+      header('Location:index.php');
      }else{
-      echo 'mal';
+      header('Location:registrar.php');
      }
  }
   

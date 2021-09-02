@@ -37,7 +37,7 @@
 	<tr>
 		<td><input type="text" id="nombre"></td>
 		<td><input type="text" id="valor" ></td>
-		<td></td>
+		<td><input type="text" id="file" ></td>
 	</tr>
 </table>
 </div>
